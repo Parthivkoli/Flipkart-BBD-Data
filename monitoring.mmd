@@ -1,0 +1,35 @@
+graph TB
+    subgraph row1["Data Collection"]
+        A["200+ K8s Clusters"] --> B["Leaf Prometheus<br/>Per Service"]
+        B --> C["Federation<br/>Combines Data"]
+        C --> D["Global Metrics<br/>80M+ Data Points"]
+    end
+    
+    subgraph row2["Monitoring & Alerts"]
+        E["Grafana Dashboards<br/>CPU/Memory/QPS"] --> F["Alerts<br/>Slack/PagerDuty"]
+        L["BBD War Room<br/>Metrics + Business"]
+    end
+    
+    subgraph row3["Testing & Chaos"]
+        G["Chaos Tools"] --> H["Test Failures<br/>Pod Kills/Network"]
+        H --> I["Shadow Tests<br/>Before BBD Sales"]
+    end
+    
+    subgraph row4["Tracing & Result"]
+        J["Jaeger Tracing"] --> K["Find Slow Services"]
+        M["Fast Deploys<br/>Reliable System"]
+    end
+    
+    D -.-> E
+    D -.-> L
+    
+    classDef input fill:#ffebee,stroke:#d32f2f
+    classDef core fill:#e3f2fd,stroke:#1976d2
+    classDef action fill:#f3e5f5,stroke:#7b1fa2
+    classDef test fill:#fff3e0,stroke:#f57c00
+    classDef outcome fill:#e8f5e8,stroke:#388e3c
+    
+    class A,B,C,D input
+    class E,F,L action
+    class G,H,I,J,K test
+    class M outcome
