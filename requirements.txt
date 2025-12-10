@@ -1,0 +1,6 @@
+matplotlib==3.8.4
+plotly==5.22.0
+drawsvg==2.3
+mermaid-python==0.1
+kaleido==0.2.1
+pandas==2.2.2
